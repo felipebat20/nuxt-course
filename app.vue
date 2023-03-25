@@ -26,11 +26,22 @@
         bg-no-repeat
         bg-cover
         bg-bottom
-        bg-[url('https://cdn.ferrari.com/cms/network/media/img/resize/5f5b66b7b6dc0602f4e66bb6-ferrari-portofino-m-intro_desktop?width=1920&height=1600')]
+        bg-[url('https://i.pinimg.com/originals/44/13/db/4413db979f336606a3a90926669a6c6e.jpg')]
       "
     >
-teste
+      <div class="z-10 absolute w-full h-full flex justify-center items-center">
+        <div class="text-center w-1/2">
+          <h1 class="text-8xl font-serif mb-10 text-white">
+            Find your drive
+          </h1>
+        </div>
+      </div>
+
+      <div class="z-1 absolute w-full h-full bg-black opacity-50">
+
+      </div>
     </div>
+
   </div>
 </template>
 
