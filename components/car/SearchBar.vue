@@ -1,7 +1,5 @@
 <template>
-	<div
-		class="font-serif w-[1000px] text-2xl rounded-full flex bg-white justify-between overflow-hidden drop-shadow-2xl mx-auto"
-	>
+	<div class="font-serif w-[1000px] text-2xl rounded-full flex bg-white justify-between overflow-hidden drop-shadow-2xl mx-auto">
 		<input
 			type="text"
 			class="py-3 px-5 w-full text-2xl rounded-full focus:outline-none"

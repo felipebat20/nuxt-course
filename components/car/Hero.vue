@@ -1,8 +1,5 @@
-
-import CarSearchBar from './CarSearchBar.vue';
-
 <template>
-    <div
+  <div
     class="
       relative
       h-screen
