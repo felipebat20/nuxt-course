@@ -15,7 +15,5 @@
     title: toTitleCase(route.params.name),
   });
 
-  definePageMeta({
-    layout: 'custom',
-  });
+  definePageMeta({ layout: 'custom' });
 </script>
