@@ -1,6 +1,6 @@
 <template>
   <div class="mt-10">
-    <img
+    <NuxtImg
       :src="car.url"
       :alt="car.name"
       class="w-full" />
