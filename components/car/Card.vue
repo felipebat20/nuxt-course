@@ -6,7 +6,7 @@
       class="absolute w-7 right-5 top-2 z-20"
       :src="favored ? heartFilled : heartOutline"
       alt="favored"
-      @click="favored = ! favored"
+      @click="emit('favor', car.id)"
     />
 
     <div
@@ -40,12 +40,9 @@
   import heartOutline from '@/assets/heartOutline.png';
 
   const props = defineProps({
-    car: Object
-  })
-
-  const favored = useState(`favored-${props.car.id}`, () => {
-    return false;
+    car: Object,
+    favored: Boolean,
   });
 
-
+  const emit = defineEmits(['favor']);
 </script>
