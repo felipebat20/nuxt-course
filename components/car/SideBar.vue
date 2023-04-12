@@ -36,9 +36,21 @@
         Make
       </h3>
 
-      <h3 class="text-blue-400 capitalize">
-        Toyota
+      <h3
+        class="text-blue-400 capitalize"
+        @click="updateModal('make')"
+      >
+        {{ route.params.make || 'Any' }}
       </h3>
+
+      <div
+        v-if="modal.make"
+        class="absolute border shadow left-56 p-5 top-1 -m-1 w-[600px] flex justify-between flex-wrap bg-white"
+      >
+        <h4 v-for="make in makes" :key="make" class="w-1/3" @click="onChangeMake(make)">
+          {{  make }}
+        </h4>
+      </div>
     </div>
 
     <div class="p-5 flex justify-between relative cursor-pointer border-b">
@@ -55,6 +67,7 @@
 
 <script setup>
   const city = ref('');
+  const { makes } = useCars();
 
   const modal = ref({
     location: false,
@@ -85,4 +98,9 @@
     return city.value = '';
   }
 
+  const onChangeMake = (make) => {
+    updateModal('make');
+
+    return navigateTo(`/city/${route.params.city}/car/${make}`)
+  };
 </script>
