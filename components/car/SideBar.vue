@@ -58,15 +58,29 @@
         Price
       </h3>
 
-      <h3 class="text-blue-400 capitalize">
-        Any
+      <h3 class="text-blue-400 capitalize whitespace-nowrap" @click="updateModal('price')">
+        {{ priceRangeText }}
       </h3>
+
+      <div
+        v-if="modal.price"
+        class="absolute border shadow left-56 p-5 top-1 -m-1 bg-white"
+      >
+        <input class="border p-1 rounded" type="number" placeholder="Min" v-model="priceRange.min">
+        <input class="border p-1 rounded mt-1" type="number" placeholder="Max" v-model="priceRange.max">
+        <button class="bg-blue-400 w-full mt-2 rounded text-white p-1" @click="onPriceChange">Apply</button>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
   const city = ref('');
+  const priceRange = ref({
+    min: '',
+    max: '',
+  });
+
   const { makes } = useCars();
 
   const modal = ref({
@@ -76,6 +90,25 @@
   });
 
   const route = useRoute();
+  const router = useRouter();
+
+  const priceRangeText = computed(() => {
+    const { minPrice = '', maxPrice = '' } = route.query;
+
+    if (! minPrice && ! maxPrice) {
+      return 'Any';
+    }
+
+    if (! minPrice && maxPrice) {
+      return `< $${maxPrice}`;
+    }
+
+    if (minPrice && ! maxPrice) {
+      return `> $${minPrice}`;
+    }
+
+    return `$${minPrice} - $${maxPrice}`;
+  });
 
   const updateModal = (key) => {
     modal.value[key] = ! modal.value[key];
@@ -103,4 +136,22 @@
 
     return navigateTo(`/city/${route.params.city}/car/${make}`)
   };
+
+  const onPriceChange = () => {
+    const { max = '', min = '' } = priceRange.value;
+
+    updateModal('price');
+    if (max && min) {
+      if (min > max) {
+        return;
+      }
+    }
+
+    router.push({
+      query: {
+        minPrice: min,
+        maxPrice: max,
+      }
+    })
+  }
 </script>
