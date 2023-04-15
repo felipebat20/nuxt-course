@@ -17,8 +17,6 @@
 
   const supabase = useSupabaseClient();
 
-  const user = useSupabaseUser();
-
   const login = async () => {
     const { error } = supabase.auth.signInWithOAuth({
       provider: 'google',
