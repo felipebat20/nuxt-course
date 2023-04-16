@@ -21,7 +21,10 @@
       Profile
     </NuxtLink>
 
-    <p class="cursor-pointer">
+    <p
+      class="cursor-pointer"
+      @click="logout"
+    >
       Logout
     </p>
   </div>
@@ -34,4 +37,27 @@
 
 <script setup>
   const user = useSupabaseUser();
+  const supabase = useSupabaseClient();
+  const logout = async () => {
+    // The conventional way to logout user with supabase
+    const { error } = supabase.auth.signOut();
+
+    if ( error ) {
+      console.log(error);
+    }
+
+    // The way to fix a bug in previous version
+    // try {
+    //   await $fetch('/api/_supabase/session', {
+    //     method: 'POST',
+    //     body: { event: 'SIGNED_OUT', session: null },
+    //   })
+    // } catch (error) {
+    //   return console.log(error);
+    // }
+
+    // user.value = null;
+
+    return navigateTo('/');
+  }
 </script>
