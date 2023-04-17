@@ -9,6 +9,8 @@
 
 <script setup>
   const route = useRoute();
+  const car = await useFetchCar(route.params.id);
+
   const { toTitleCase } = useUtilities();
 
   useHead({
@@ -16,4 +18,5 @@
   });
 
   definePageMeta({ layout: 'custom' });
+
 </script>
