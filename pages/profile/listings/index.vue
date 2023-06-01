@@ -16,6 +16,7 @@
         v-for="listing in listings"
         :key="listing.id"
         :listing="listing"
+        @delete-click="handleDelete"
       />
     </div>
   </div>
@@ -26,5 +27,15 @@
     layout: 'custom',
   });
 
-  const { listings } = useCars();
+  // const { listings } = useCars();
+
+  const user = useSupabaseUser();
+  const { data: listings } = await useFetch(`/api/car/listings/user/${user.value.id}`);
+  console.log(listings.value);
+
+  const handleDelete = async (id) => {
+    await $fetch(`/api/car/listings/${id}`, { method: 'delete' })
+
+    listings.value = listings.value.filter(listing => listing.id !== id)
+  }
 </script>

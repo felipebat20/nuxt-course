@@ -71,7 +71,7 @@
       seats: '',
       features: '',
       description: '',
-      image: null,
+      image: 'randomstring',
     };
   });
 
@@ -91,6 +91,7 @@
   };
 
   const handleSubmit = async () => {
+    console.log('trig');
     const body = {
       ...info.value,
       city: info.value.city.toLowerCase(),
@@ -99,7 +100,7 @@
       miles: parseInt(info.value.miles),
       price: parseInt(info.value.price),
       year: parseInt(info.value.year),
-      name: `${info.value.name}`,
+      name: `${info.value.make} ${info.value.model}`,
       listerId: user.value.id,
       image: 'therearebeautifulgirls'
     }
@@ -112,9 +113,12 @@
         body,
       });
 
-      navigateTo('/profile/listings');
+      console.log(response);
+
+      return navigateTo('/profile/listings');
     } catch (err) {
-      errorMessage.value = err.statusMessage;
+      console.log(err);
+      return errorMessage.value = err.statusMessage;
     }
   };
 
