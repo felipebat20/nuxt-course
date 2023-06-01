@@ -13,8 +13,11 @@
       class="flex h-full"
       @click="navigateTo(`/car/${car.name}-${car.id}`)"
     >
-      <NuxtImg :src="car.url" alt=""
-        class="w-[300px] h-full" />
+      <NuxtImg
+        :src="car.image"
+        alt=""
+        class="w-[300px] h-full"
+      />
 
       <div class="p-4 flex flex-col">
         <div>

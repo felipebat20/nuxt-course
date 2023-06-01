@@ -10,8 +10,6 @@ export default defineEventHandler((event) => {
     city: city.toLowerCase(),
   };
 
-  filteredCars = filteredCars.filter(car => car.city.toLowerCase() === city.toLowerCase());
-
   if (make) {
     filters.make = make;
   }
