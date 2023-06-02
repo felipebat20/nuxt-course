@@ -56,6 +56,7 @@
   definePageMeta({ layout: 'custom' });
 
   const user = useSupabaseUser();
+  const supabase = useSupabaseClient();
 
   const { makes } = useCars();
 
@@ -71,14 +72,13 @@
       seats: '',
       features: '',
       description: '',
-      image: 'randomstring',
+      image: null,
     };
   });
 
   const isButtonDisabled = computed(() => {
     for (let key in info.value)  {
       if (! info.value[key]) {
-        console.log(key);
         return true;
       }
     }
@@ -91,7 +91,14 @@
   };
 
   const handleSubmit = async () => {
-    console.log('trig');
+    const fileName = Math.floor(Math.random() * 100000000000);
+
+    const { data, error } = await supabase.storage.from('images').upload('public/' + fileName, info.value.image)
+
+    if (error) {
+      return errorMessage.value = 'Cannot upload image now';
+    }
+
     const body = {
       ...info.value,
       city: info.value.city.toLowerCase(),
@@ -102,7 +109,7 @@
       year: parseInt(info.value.year),
       name: `${info.value.make} ${info.value.model}`,
       listerId: user.value.id,
-      image: 'therearebeautifulgirls'
+      image: data.path,
     }
 
     delete body.seats;
@@ -113,11 +120,10 @@
         body,
       });
 
-      console.log(response);
-
       return navigateTo('/profile/listings');
     } catch (err) {
-      console.log(err);
+      await supabase.storage.from('images').remove(data.path)
+
       return errorMessage.value = err.statusMessage;
     }
   };

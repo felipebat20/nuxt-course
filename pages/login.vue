@@ -21,9 +21,5 @@
     const { error } = supabase.auth.signInWithOAuth({
       provider: 'google',
     });
-
-    if (error) {
-      console.log(error);
-    }
   }
 </script>

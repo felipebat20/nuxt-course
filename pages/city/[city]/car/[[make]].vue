@@ -11,12 +11,6 @@
 <script setup>
   const route = useRoute();
 
-  console.log({
-    minPrice: route.query.minPrice,
-    maxPrice: route.query.maxPrice,
-    make: route.query.make
-  });
-
   const { data: cars, refresh } = await useFetchCars(route.params.city, {
     minPrice: route.query.minPrice,
     maxPrice: route.query.maxPrice,

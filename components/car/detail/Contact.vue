@@ -53,8 +53,6 @@
         body: message.value,
       });
 
-      console.log(response);
-
       message.value = {
         name: '',
         email: '',
@@ -75,7 +73,6 @@
   const disabledButton = computed(() => {
     for (let key in message.value) {
       if (! message.value[key]) {
-        console.log(key);
         return true;
       }
     }
