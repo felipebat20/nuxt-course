@@ -18,11 +18,11 @@
   const supabase = useSupabaseClient();
 
   const config = useRuntimeConfig();
-  console.log(config?.public?.NEXT_PUBLIC_VERCEL_URL, config?.public?.siteUrl);
+  console.log(config?.public?.NUXT_ENV_VERCEL_URL);
 
   const getUrl = () => {
     let url =
-      config?.public?.NEXT_PUBLIC_VERCEL_URL ??
+      config?.public?.NUXT_ENV_VERCEL_URL ??
       config?.public?.NEXT_PUBLIC_SITE_URL ??
       'http://localhost:3000/';
 

@@ -8,8 +8,8 @@ export default defineNuxtConfig({
   ],
   runtimeConfig: {
     public: {
-      NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
-      NEXT_PUBLIC_VERCEL_URL: process.env.NEXT_PUBLIC_VERCEL_URL,
+      NUXT_PUBLIC_SITE_URL: process.env.NUXT_PUBLIC_SITE_URL,
+      NUXT_ENV_VERCEL_URL: process.env.NUXT_ENV_VERCEL_URL,
       siteUrl: process.env.SITE_URL,
     }
   }
