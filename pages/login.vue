@@ -18,7 +18,6 @@
   const supabase = useSupabaseClient();
 
   const config = useRuntimeConfig();
-  console.log(config?.public?.NUXT_ENV_VERCEL_URL);
 
   const getUrl = () => {
     let url =
@@ -31,6 +30,9 @@
 
     return url;
   }
+
+
+  console.log(config?.public?.NUXT_ENV_VERCEL_URL, getUrl());
 
   const login = async () => {
     const { error } = supabase.auth.signInWithOAuth({
