@@ -17,10 +17,13 @@
 
   const supabase = useSupabaseClient();
 
+  const config = useRuntimeConfig();
+  console.log(config?.public?.NEXT_PUBLIC_VERCEL_URL, config?.public?.siteUrl);
+
   const getUrl = () => {
     let url =
-      process?.env?.NEXT_PUBLIC_SITE_URL ??
-      process?.env?.NEXT_PUBLIC_VERCEL_URL ??
+      config?.public?.NEXT_PUBLIC_VERCEL_URL ??
+      config?.public?.NEXT_PUBLIC_SITE_URL ??
       'http://localhost:3000/';
 
     url = url.includes('http') ? url : `https://${url}`;
