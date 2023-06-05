@@ -21,7 +21,7 @@
 
   const getUrl = () => {
     let url =
-      config?.public?.NUXT_ENV_VERCEL_URL ??
+      config?.public?.VERCEL_URL ??
       config?.public?.NEXT_PUBLIC_SITE_URL ??
       'http://localhost:3000/';
 
@@ -30,9 +30,6 @@
 
     return url;
   }
-
-
-  console.log(config?.public?.NUXT_ENV_VERCEL_URL, getUrl());
 
   const login = async () => {
     const { error } = supabase.auth.signInWithOAuth({

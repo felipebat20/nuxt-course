@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       NUXT_PUBLIC_SITE_URL: process.env.NUXT_PUBLIC_SITE_URL,
-      NUXT_ENV_VERCEL_URL: process.env.NUXT_ENV_VERCEL_URL,
+      VERCEL_URL: process.env.VERCEL_URL,
       siteUrl: process.env.SITE_URL,
     }
   }
