@@ -21,8 +21,9 @@
 
   const getUrl = () => {
     let url =
+      config?.public?.siteUrl ??
       config?.public?.VERCEL_URL ??
-      config?.public?.NEXT_PUBLIC_SITE_URL ??
+      config?.public?.NUXT_PUBLIC_SITE_URL ??
       'http://localhost:3000/';
 
     url = url.includes('http') ? url : `https://${url}`;
