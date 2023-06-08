@@ -3,5 +3,9 @@ import en from './lang/en';
 
 export default defineI18nConfig(() => ({
   legacy: false,
-  messages: { en, 'pt-BR': pt_br },
+  locale: 'pt-BR',
+  messages: {
+    en,
+    'pt-BR': pt_br,
+  },
 }));
