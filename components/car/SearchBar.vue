@@ -5,7 +5,7 @@
 			type="text"
 			class="py-3 px-5 w-full text-2xl rounded-full focus:outline-none"
 			:class="{'border-red-500 border': cityError }"
-			:placeholder="$t('cars.home.search.placeholder')"
+			:placeholder="search_placeholder"
 			@keydown.exact.enter="handleSearch"
 		/>
 
@@ -22,6 +22,9 @@
 <script setup>
 	const city = ref('');
 	const cityError = ref(false);
+	const { t }  = useI18n();
+
+	const search_placeholder = computed(() => t('cars.home.search.placeholder'))
 
 	const handleSearch = () => {
 		if (! city.value) {
