@@ -6,6 +6,12 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     "@nuxtjs/supabase",
   ],
+  app: {
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+    },
+  },
   runtimeConfig: {
     public: {
       NUXT_PUBLIC_SITE_URL: process.env.NUXT_PUBLIC_SITE_URL,
