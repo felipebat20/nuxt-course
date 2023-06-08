@@ -1,0 +1,9 @@
+{
+  "home": {
+    "title": "Find your drive",
+    "search": {
+      "placeholder": "Search by city...",
+      "action": "Search"
+    }
+  }
+}
