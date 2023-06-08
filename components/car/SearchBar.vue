@@ -24,13 +24,17 @@
 	const cityError = ref(false);
 	const { t }  = useI18n();
 
-	const search_placeholder = computed(() => t('cars.home.search.action'))
+	let search_placeholder = computed(() => t('cars.home.search.action'))
 
 	const handleSearch = () => {
 		if (! city.value) {
 			return cityError.value = true;
 		}
 
-		navigateTo(`/city/${city.value}/car`);
+		// return navigateTo(`/city/${city.value}/car`);
+
+		search_placeholder = t('cars.home.search.action');
+
+		city.value = '';
 	};
 </script>
