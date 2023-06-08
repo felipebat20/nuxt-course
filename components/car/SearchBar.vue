@@ -33,6 +33,8 @@
 
 		// return navigateTo(`/city/${city.value}/car`);
 
+		console.log(t('cars.home.search.action'));
+
 		search_placeholder = t('cars.home.search.action');
 
 		city.value = '';
