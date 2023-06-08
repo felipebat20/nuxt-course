@@ -35,7 +35,7 @@
 
 		console.log(t('cars.home.search.action'));
 
-		search_placeholder = t('cars.home.search.action');
+		search_placeholder.value = t('cars.home.search.placeholder');
 
 		city.value = '';
 	};
