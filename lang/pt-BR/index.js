@@ -1,3 +1,7 @@
 import cars from './cars.json';
+import fields from './fields.json';
 
-export default { cars };
+export default {
+  cars,
+  fields,
+};

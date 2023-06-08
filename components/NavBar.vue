@@ -18,19 +18,19 @@
 
   <div v-if="user" class="flex">
     <NuxtLink to="/profile/listings" class="mr-5">
-      Profile
+      {{ $t('fields.profile') }}
     </NuxtLink>
 
     <p
       class="cursor-pointer"
       @click="logout"
     >
-      Logout
+      {{ $t('fields.logout') }}
     </p>
   </div>
 
   <NuxtLink v-else to="/login">
-    Login
+    {{ $t('fields.login') }}
   </NuxtLink>
   </header>
 </template>

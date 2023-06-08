@@ -24,7 +24,7 @@
 	const cityError = ref(false);
 	const { t }  = useI18n();
 
-	const search_placeholder = computed(() => t('cars.home.search.placeholder'))
+	const search_placeholder = computed(() => t('cars.home.search.action'))
 
 	const handleSearch = () => {
 		if (! city.value) {

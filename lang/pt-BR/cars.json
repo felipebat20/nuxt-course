@@ -2,7 +2,8 @@
   "home": {
     "title": "Encontre seu carro",
     "search": {
-      "placeholder": "Busque pela cidade...",
+      "placeholder": "Buscar pela cidade",
+      "test": "Buscar ",
       "action": "Buscar"
     }
   }
