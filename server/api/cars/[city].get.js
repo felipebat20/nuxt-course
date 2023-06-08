@@ -3,7 +3,7 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 export default defineEventHandler((event) => {
-  const { city } = event.context.params;
+  const city = decodeURI(event.context.params.city);
   const { make, minPrice, maxPrice } = getQuery(event);
 
   const filters = {
