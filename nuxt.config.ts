@@ -5,6 +5,7 @@ export default defineNuxtConfig({
     '@nuxt/image-edge',
     '@vueuse/nuxt',
     "@nuxtjs/supabase",
+    '@nuxtjs/i18n',
   ],
   app: {
     head: {
@@ -18,5 +19,11 @@ export default defineNuxtConfig({
       VERCEL_URL: process.env.VERCEL_URL,
       siteUrl: process.env.SITE_URL,
     }
+  },
+
+  i18n: {
+    locales: ['en', 'pt-BR'],
+    defaultLocale: 'pt-BR',
+    vueI18n: './i18n.config.ts',
   }
 });

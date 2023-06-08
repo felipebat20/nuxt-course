@@ -5,7 +5,7 @@
 			type="text"
 			class="py-3 px-5 w-full text-2xl rounded-full focus:outline-none"
 			:class="{'border-red-500 border': cityError }"
-			placeholder="Search by city..."
+			:placeholder="$t('cars.home.search.placeholder')"
 			@keydown.exact.enter="handleSearch"
 		/>
 
@@ -14,7 +14,7 @@
 			class="bg-sky-500 px-10 text-white"
 			@click="handleSearch"
 		>
-			Search
+			{{ $t('cars.home.search.action') }}
 		</button>
 	</div>
 </template>
