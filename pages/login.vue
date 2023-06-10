@@ -1,11 +1,11 @@
 <template>
   <div class="mt-10">
     <h1 class="text-5xl font-bold mb-7">
-      Log in
+      {{ $t('fields.login') }}
     </h1>
 
     <button @click="login" class="bg-red-400 p-3 rounded text-white font-bold">
-      Login with Google
+      {{ $t('fields.connect_with_google') }}
     </button>
   </div>
 </template>

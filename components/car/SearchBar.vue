@@ -5,7 +5,7 @@
 			type="text"
 			class="py-3 px-5 w-full text-2xl rounded-full focus:outline-none"
 			:class="{'border-red-500 border': cityError }"
-			:placeholder="search_placeholder"
+			placeholder="Buscar pela cidade"
 			@keydown.exact.enter="handleSearch"
 		/>
 
@@ -22,21 +22,12 @@
 <script setup>
 	const city = ref('');
 	const cityError = ref(false);
-	const { t }  = useI18n();
-
-	let search_placeholder = computed(() => t('cars.home.search.action'))
 
 	const handleSearch = () => {
 		if (! city.value) {
 			return cityError.value = true;
 		}
 
-		// return navigateTo(`/city/${city.value}/car`);
-
-		console.log(t('cars.home.search.action'));
-
-		search_placeholder = t(city.value);
-
-		city.value = '';
+		navigateTo(`/city/${city.value}/car`);
 	};
 </script>

@@ -1,5 +1,6 @@
 {
   "login": "Entrar",
   "profile": "Perfil",
-  "logout": "Sair"
+  "logout": "Sair",
+  "connect_with_google": "Conectar com o google"
 }
