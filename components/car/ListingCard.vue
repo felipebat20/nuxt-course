@@ -14,8 +14,8 @@
     </div>
 
     <div class="p-3 flex">
-      <NuxtLink class="text-blue-400 mr-4" :to="`/profile/listings/view/${listing.id}`">View</NuxtLink>
-      <p class="text-red-400 cursor-pointer" @click="emits('deleteClick', listing.id)">Delete</p>
+      <NuxtLink class="text-blue-400 mr-4" :to="`/profile/listings/view/${listing.id}`">{{ $t('fields.see') }}</NuxtLink>
+      <p class="text-red-400 cursor-pointer" @click="emits('deleteClick', listing.id)">{{ $t('fields.delete') }}</p>
     </div>
   </div>
 </template>

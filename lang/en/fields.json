@@ -2,5 +2,8 @@
   "login": "Login",
   "profile": "Profile",
   "logout": "Logout",
-  "connect_with_google": "Connect with google"
+  "connect_with_google": "Connect with google",
+  "my_listings": "My listings",
+  "see": "View",
+  "delete": "Delete"
 }

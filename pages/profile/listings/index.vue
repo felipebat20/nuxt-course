@@ -2,7 +2,7 @@
   <div>
     <div class="flex justify-between mt-24 items-center">
       <h1 class="text-6xl">
-        My Listings
+        {{ $t('fields.my_listings') }}
       </h1>
 
       <NuxtLink
