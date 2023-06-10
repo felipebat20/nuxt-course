@@ -5,7 +5,7 @@
 			type="text"
 			class="py-3 px-5 w-full text-2xl rounded-full focus:outline-none"
 			:class="{'border-red-500 border': cityError }"
-			:placeholder="$t('cars.home.search.placeholder')"
+			placeholder="Buscar pela cidade"
 			@keydown.exact.enter="handleSearch"
 		/>
 
